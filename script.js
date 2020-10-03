@@ -5,6 +5,7 @@ const items = document.getElementsByClassName('items');
 const home1 = document.querySelector('#home1');
 const home2 = document.querySelector('#home2');
 const dropdown = document.getElementById('dropdown');
+const header = document.getElementById("header");
 
 
 
@@ -39,6 +40,8 @@ function categories() {
 
 
 function generateCategories(categories) {
+  header.innerHTML = ''
+  header.innerHTML = '<h1>Categories</h1>'
   for (let i = 0; i < categories.length; i += 1) {
     meal_container.innerHTML += `
     <div class="col mb-4">
@@ -73,6 +76,8 @@ function recipes(category) {
 
 
 function generateMeals(meals) {
+  header.innerHTML = ''
+  header.innerHTML = '<h1>Meals</h1>'
   meal_container.innerHTML = "";
   for (let i = 0; i < meals.length; i += 1) {
     meal_container.innerHTML += `
@@ -105,6 +110,7 @@ function recipesGet(recipeMeal) {
 // Function to generate the recipe per meal id
 
 function generateRecipe(recipe) {
+  header.innerHTML = ''
   meal_container.innerHTML = "";
   meal_container.classList.remove("row", "row-cols-1", "row-cols-md-3");
   const ingredients = [];

@@ -3,6 +3,10 @@
   margin-top: 20px;
 }
 
+.header {
+  padding: 20px;
+}
+
 .meal-name {
   margin: 30px;
   text-align: center;

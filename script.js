@@ -33,7 +33,6 @@ function categories() {
     .then(res => res.json())
     .then(res => {
       let data = res.categories;
-      console.log(data)
       generateCategories(data);
     });
 }
@@ -99,7 +98,6 @@ function recipesGet(recipeMeal) {
   fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipeMeal}`)
     .then(res => res.json())
     .then(res => {
-      console.log(res.meals)
       generateRecipe(res.meals[0])
     });
 

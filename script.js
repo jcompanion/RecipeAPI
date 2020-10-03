@@ -66,8 +66,7 @@ function recipes(category) {
   fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
     .then(res => res.json())
     .then(res => {
-      console.log(res.meals)
-      generateMeals(res.meals);
+      generateMeals(res.meals, category);
     });
 
 };
@@ -75,9 +74,9 @@ function recipes(category) {
 
 
 
-function generateMeals(meals) {
+function generateMeals(meals, c) {
   header.innerHTML = ''
-  header.innerHTML = '<h1>Meals</h1>'
+  header.innerHTML = `<h1>${c} Recipes</h1>`
   meal_container.innerHTML = "";
   for (let i = 0; i < meals.length; i += 1) {
     meal_container.innerHTML += `
